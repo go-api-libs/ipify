@@ -1,3 +1,48 @@
 ---
 version: 2
-interactions: []
+interactions:
+    - id: 0
+      request:
+        proto: HTTP/1.1
+        proto_major: 1
+        proto_minor: 1
+        content_length: 0
+        transfer_encoding: []
+        trailer: {}
+        host: api.ipify.org
+        remote_addr: ""
+        request_uri: ""
+        body: ""
+        form: {}
+        headers: {}
+        url: https://api.ipify.org?format=json
+        method: GET
+      response:
+        proto: HTTP/2.0
+        proto_major: 2
+        proto_minor: 0
+        transfer_encoding: []
+        trailer: {}
+        content_length: 22
+        uncompressed: false
+        body: '{"ip":"89.39.107.192"}'
+        headers:
+            Cf-Cache-Status:
+                - DYNAMIC
+            Cf-Ray:
+                - 8f5ff8010dac1c94-AMS
+            Content-Length:
+                - "22"
+            Content-Type:
+                - application/json
+            Date:
+                - Sun, 22 Dec 2024 12:03:27 GMT
+            Server:
+                - cloudflare
+            Server-Timing:
+                - cfL4;desc="?proto=TCP&rtt=2690&min_rtt=1722&rtt_var=1372&sent=8&recv=10&lost=0&retrans=0&sent_bytes=4259&recv_bytes=1751&delivery_rate=2432250&cwnd=253&unsent_bytes=0&cid=85068616f085c3fe&ts=130&x=0"
+            Vary:
+                - Origin
+        status: 200 OK
+        code: 200
+        duration: 206.53775ms
