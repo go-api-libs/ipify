@@ -39,18 +39,18 @@ func NewClient() (*Client, error) {
 	return &Client{cli: http.DefaultClient}, nil
 }
 
-// Get defines an operation.
+// GetIP defines an operation.
 //
 //	GET /
-func (c *Client) Get(ctx context.Context, params *GetParams) (*IPWrapper, error) {
-	return Get[IPWrapper](ctx, c, params)
+func (c *Client) GetIP(ctx context.Context, params *GetIPParams) (*IPWrapper, error) {
+	return GetIP[IPWrapper](ctx, c, params)
 }
 
-// Get defines an operation.
+// GetIP defines an operation.
 // You can define a custom result to unmarshal the response into.
 //
 //	GET /
-func Get[R any](ctx context.Context, c *Client, params *GetParams) (*R, error) {
+func GetIP[R any](ctx context.Context, c *Client, params *GetIPParams) (*R, error) {
 	u := baseURL.JoinPath("/")
 
 	if params != nil && params.Format != "" {

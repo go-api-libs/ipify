@@ -37,7 +37,7 @@ func main() {
 	}
 
 	ctx := context.Background()
-	ipWrapper, err := c.Get(ctx, &ipify.GetParams{Format: "json"})
+	ipWrapper, err := c.GetIP(ctx, &ipify.GetIPParams{Format: "json"})
 	if err != nil {
 		panic(err)
 	}

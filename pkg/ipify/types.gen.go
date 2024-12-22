@@ -6,7 +6,7 @@ package ipify
 
 import "net"
 
-type GetParams struct {
+type GetIPParams struct {
 	Format string
 }
 
