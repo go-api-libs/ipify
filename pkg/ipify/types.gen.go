@@ -10,7 +10,7 @@ type GetParams struct {
 	Format string
 }
 
-// GetOkJSONResponse defines a model
-type GetOkJSONResponse struct {
+// IPWrapper defines a model
+type IPWrapper struct {
 	IP net.IP `json:"ip,omitzero"`
 }

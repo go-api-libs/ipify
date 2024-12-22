@@ -21,7 +21,7 @@
         "operationId": "Get",
         "responses": {
           "200": {
-            "$ref": "#/components/responses/GetOkResponse"
+            "$ref": "#/components/responses/IPResponse"
           }
         }
       }
@@ -29,7 +29,7 @@
   },
   "components": {
     "schemas": {
-      "GetOkJSONResponse": {
+      "IPWrapper": {
         "type": "object",
         "properties": {
           "ip": {
@@ -47,12 +47,12 @@
       }
     },
     "responses": {
-      "GetOkResponse": {
-        "description": "TODO",
+      "IPResponse": {
+        "description": "Returns the IP address of the requester.",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/GetOkJSONResponse"
+              "$ref": "#/components/schemas/IPWrapper"
             },
             "example": {
               "ip": "89.39.107.192"

@@ -42,8 +42,8 @@ func NewClient() (*Client, error) {
 // Get defines an operation.
 //
 //	GET /
-func (c *Client) Get(ctx context.Context, params *GetParams) (*GetOkJSONResponse, error) {
-	return Get[GetOkJSONResponse](ctx, c, params)
+func (c *Client) Get(ctx context.Context, params *GetParams) (*IPWrapper, error) {
+	return Get[IPWrapper](ctx, c, params)
 }
 
 // Get defines an operation.
@@ -75,7 +75,7 @@ func Get[R any](ctx context.Context, c *Client, params *GetParams) (*R, error) {
 
 	switch rsp.StatusCode {
 	case http.StatusOK:
-		// TODO
+		// Returns the IP address of the requester.
 		switch mt, _, _ := strings.Cut(rsp.Header.Get("Content-Type"), ";"); mt {
 		case "application/json":
 			var out R

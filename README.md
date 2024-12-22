@@ -37,12 +37,12 @@ func main() {
 	}
 
 	ctx := context.Background()
-	getOkJSONResponse, err := c.Get(ctx, &ipify.GetParams{Format: "json"})
+	ipWrapper, err := c.Get(ctx, &ipify.GetParams{Format: "json"})
 	if err != nil {
 		panic(err)
 	}
 
-	// Use getOkJSONResponse object
+	// Use ipWrapper object
 }
 
 ```
