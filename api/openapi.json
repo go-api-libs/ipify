@@ -8,6 +8,9 @@
   "servers": [
     {
       "url": "https://api.ipify.org"
+    },
+    {
+      "url": "https://api64.ipify.org"
     }
   ],
   "paths": {
