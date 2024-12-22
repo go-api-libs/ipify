@@ -3,7 +3,7 @@
 [![Official Documentation](https://img.shields.io/badge/docs-API-blue)](https://www.ipify.org/)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-blue)](/api/openapi.json)
 [![Go Report Card](https://goreportcard.com/badge/github.com/go-api-libs/ipify)](https://goreportcard.com/report/github.com/go-api-libs/ipify)
-![Code Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
+![Code Coverage](https://img.shields.io/badge/coverage-51%25-yellow)
 ![API Health](https://img.shields.io/badge/API_health-95%25-brightgreen)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
