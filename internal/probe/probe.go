@@ -9,7 +9,7 @@ import (
 // probe calls the API server to check what we can do
 func probe() error {
 	// define http calls here, e.g.:
-	_, err := http.Get("https://api.ipify.org?format=json")
+	_, err := http.Get("https://api.ipify.org/?format=json")
 	return err
 }
 

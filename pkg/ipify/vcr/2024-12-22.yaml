@@ -15,7 +15,7 @@ interactions:
         body: ""
         form: {}
         headers: {}
-        url: https://api.ipify.org?format=json
+        url: https://api.ipify.org/?format=json
         method: GET
       response:
         proto: HTTP/2.0
@@ -30,19 +30,19 @@ interactions:
             Cf-Cache-Status:
                 - DYNAMIC
             Cf-Ray:
-                - 8f5ff8010dac1c94-AMS
+                - 8f601671d967fb97-AMS
             Content-Length:
                 - "22"
             Content-Type:
                 - application/json
             Date:
-                - Sun, 22 Dec 2024 12:03:27 GMT
+                - Sun, 22 Dec 2024 12:24:14 GMT
             Server:
                 - cloudflare
             Server-Timing:
-                - cfL4;desc="?proto=TCP&rtt=2690&min_rtt=1722&rtt_var=1372&sent=8&recv=10&lost=0&retrans=0&sent_bytes=4259&recv_bytes=1751&delivery_rate=2432250&cwnd=253&unsent_bytes=0&cid=85068616f085c3fe&ts=130&x=0"
+                - cfL4;desc="?proto=TCP&rtt=3364&min_rtt=1501&rtt_var=3888&sent=7&recv=10&lost=0&retrans=0&sent_bytes=4281&recv_bytes=1751&delivery_rate=2813471&cwnd=254&unsent_bytes=0&cid=8a77ae4083078cb3&ts=136&x=0"
             Vary:
                 - Origin
         status: 200 OK
         code: 200
-        duration: 206.53775ms
+        duration: 184.034333ms

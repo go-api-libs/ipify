@@ -5,9 +5,12 @@
 package ipify
 
 import (
+	"context"
 	"net/http"
 	"net/url"
+	"strings"
 
+	"github.com/go-api-libs/api"
 	"github.com/go-json-experiment/json"
 )
 
@@ -17,9 +20,8 @@ const (
 
 var (
 	baseURL = &url.URL{
-		Host:   "",
-		Path:   "TODO",
-		Scheme: "",
+		Host:   "api.ipify.org",
+		Scheme: "https",
 	}
 
 	jsonOpts = json.JoinOptions(
@@ -35,4 +37,57 @@ type Client struct {
 // NewClient creates a new Client.
 func NewClient() (*Client, error) {
 	return &Client{cli: http.DefaultClient}, nil
+}
+
+// Get defines an operation.
+//
+//	GET /
+func (c *Client) Get(ctx context.Context, params *GetParams) (*GetOkJSONResponse, error) {
+	return Get[GetOkJSONResponse](ctx, c, params)
+}
+
+// Get defines an operation.
+// You can define a custom result to unmarshal the response into.
+//
+//	GET /
+func Get[R any](ctx context.Context, c *Client, params *GetParams) (*R, error) {
+	u := baseURL.JoinPath("/")
+
+	if params != nil && params.Format != "" {
+		u.RawQuery = url.Values{"format": []string{params.Format}}.Encode()
+	}
+
+	req := (&http.Request{
+		Header:     http.Header{"User-Agent": []string{userAgent}},
+		Host:       u.Host,
+		Method:     http.MethodGet,
+		Proto:      "HTTP/1.1",
+		ProtoMajor: 1,
+		ProtoMinor: 1,
+		URL:        u,
+	}).WithContext(ctx)
+
+	rsp, err := c.cli.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer rsp.Body.Close()
+
+	switch rsp.StatusCode {
+	case http.StatusOK:
+		// TODO
+		switch mt, _, _ := strings.Cut(rsp.Header.Get("Content-Type"), ";"); mt {
+		case "application/json":
+			var out R
+			if err := json.UnmarshalRead(rsp.Body, &out, jsonOpts); err != nil {
+				return nil, api.WrapDecodingError(rsp, err)
+			}
+
+			return &out, nil
+		default:
+			return nil, api.NewErrUnknownContentType(rsp)
+		}
+	default:
+		return nil, api.NewErrUnknownStatusCode(rsp)
+	}
 }

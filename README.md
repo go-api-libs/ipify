@@ -3,7 +3,7 @@
 [![Official Documentation](https://img.shields.io/badge/docs-API-blue)](https://www.ipify.org/)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-blue)](/api/openapi.json)
 [![Go Report Card](https://goreportcard.com/badge/github.com/go-api-libs/ipify)](https://goreportcard.com/report/github.com/go-api-libs/ipify)
-![Code Coverage](https://img.shields.io/badge/coverage-0%25-red)
+![Code Coverage](https://img.shields.io/badge/coverage-26%25-red)
 ![API Health](https://img.shields.io/badge/API_health-95%25-brightgreen)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
@@ -18,6 +18,34 @@ go get github.com/go-api-libs/ipify/pkg/ipify
 ```
 
 ## Usage
+
+### Example: 
+
+```go
+package main
+
+import (
+	"context"
+
+	"github.com/go-api-libs/ipify/pkg/ipify"
+)
+
+func main() {
+	c, err := ipify.NewClient()
+	if err != nil {
+		panic(err)
+	}
+
+	ctx := context.Background()
+	getOkJSONResponse, err := c.Get(ctx, &ipify.GetParams{Format: "json"})
+	if err != nil {
+		panic(err)
+	}
+
+	// Use getOkJSONResponse object
+}
+
+```
 
 ## Additional Information
 

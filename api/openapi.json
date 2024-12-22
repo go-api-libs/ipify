@@ -7,11 +7,70 @@
   },
   "servers": [
     {
-      "url": "TODO"
+      "url": "https://api.ipify.org"
     }
   ],
   "paths": {
-    "/": {}
+    "/": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/format"
+        }
+      ],
+      "get": {
+        "operationId": "Get",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GetOkResponse"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GetOkJSONResponse": {
+        "type": "object",
+        "properties": {
+          "ip": {
+            "type": "string",
+            "example": "89.39.107.192"
+          }
+        },
+        "required": [
+          "ip"
+        ],
+        "example": {
+          "ip": "89.39.107.192"
+        }
+      }
+    },
+    "responses": {
+      "GetOkResponse": {
+        "description": "TODO",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/GetOkJSONResponse"
+            },
+            "example": {
+              "ip": "89.39.107.192"
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "format": {
+        "name": "format",
+        "in": "query",
+        "schema": {
+          "type": "string",
+          "example": "json"
+        },
+        "example": "json"
+      }
+    }
   },
   "externalDocs": {
     "description": "API documentation",
