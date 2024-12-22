@@ -1,0 +1,20 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ipify API",
+    "description": "A simple public IP address API, easy to integrate into any application in seconds.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "TODO"
+    }
+  ],
+  "paths": {
+    "/": {}
+  },
+  "externalDocs": {
+    "description": "API documentation",
+    "url": "https://www.ipify.org/"
+  }
+}
