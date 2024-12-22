@@ -1,0 +1,10 @@
+{
+  "id": 170,
+  "emoji": "🌐",
+  "title": "ipify API",
+  "description": "A simple public IP address API, easy to integrate into any application in seconds.",
+  "documentation": "https://www.ipify.org/",
+  "methods": 2,
+  "health": 95,
+  "source": "https://freepublicapis.com/ipify-api"
+}
