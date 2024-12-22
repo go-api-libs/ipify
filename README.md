@@ -19,7 +19,7 @@ go get github.com/go-api-libs/ipify/pkg/ipify
 
 ## Usage
 
-### Example: 
+### Example: Get you public IP address
 
 ```go
 package main

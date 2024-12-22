@@ -39,14 +39,14 @@ func NewClient() (*Client, error) {
 	return &Client{cli: http.DefaultClient}, nil
 }
 
-// GetIP defines an operation.
+// Get you public IP address
 //
 //	GET /
 func (c *Client) GetIP(ctx context.Context, params *GetIPParams) (*IPWrapper, error) {
 	return GetIP[IPWrapper](ctx, c, params)
 }
 
-// GetIP defines an operation.
+// Get you public IP address
 // You can define a custom result to unmarshal the response into.
 //
 //	GET /

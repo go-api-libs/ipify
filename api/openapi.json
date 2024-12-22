@@ -21,6 +21,7 @@
         }
       ],
       "get": {
+        "summary": "Get you public IP address",
         "operationId": "GetIP",
         "responses": {
           "200": {
