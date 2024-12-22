@@ -10,6 +10,11 @@ import (
 func probe() error {
 	// define http calls here, e.g.:
 	_, err := http.Get("https://api.ipify.org/?format=json")
+	if err != nil {
+		return err
+	}
+
+	// _, err = http.Get("https://api64.ipify.org?format=json")
 	return err
 }
 
