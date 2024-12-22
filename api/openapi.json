@@ -34,6 +34,7 @@
         "properties": {
           "ip": {
             "type": "string",
+            "format": "ipv4",
             "example": "89.39.107.192"
           }
         },

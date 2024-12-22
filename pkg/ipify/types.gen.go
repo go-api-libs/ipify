@@ -4,11 +4,13 @@
 
 package ipify
 
+import "net"
+
 type GetParams struct {
 	Format string
 }
 
 // GetOkJSONResponse defines a model
 type GetOkJSONResponse struct {
-	IP string `json:"ip,omitzero"`
+	IP net.IP `json:"ip,omitzero"`
 }
